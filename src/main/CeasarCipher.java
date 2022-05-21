@@ -81,6 +81,8 @@ public class CeasarCipher {
         }
         System.out.println("Your shift value is" + " " + shiftValue);
 
+
+
     }
 
     public static void continueFunction() {
