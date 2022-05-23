@@ -1,5 +1,6 @@
 import java.io.Console;
 import java.util.*;
+import encrypt_decrypt.*;
 
 
 public class CeasarCipher {
@@ -56,7 +57,7 @@ public class CeasarCipher {
         }
 
         //ensure that input message contains no numeric values, is not empty and remove any punctuation marks
-        String inputString = messageInput.replaceAll("\\p{Punct}", "");
+        String inputString = messageInput.replaceAll("\\p{Punct}", "").toUpperCase();
 
         if(inputString.matches(".*\\d.*")){
             System.out.println("Your input does not meet the criteria stated above.");
@@ -81,7 +82,17 @@ public class CeasarCipher {
         }
         System.out.println("Your shift value is" + " " + shiftValue);
 
+        //run encryption
+        if(conversionCeasar == "encode"){
+            Encrypt newEncrypt = new Encrypt(inputString, shiftValue);
+            System.out.println("Your encoded message is: " + newEncrypt.encryptMessage().toUpperCase());
 
+            //run decryption
+        } else if(conversionCeasar == "decode") {
+
+        }else
+            System.out.println("Kindly choose if you want to decode or encode");
+            continueFunction();
 
     }
 
