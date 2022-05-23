@@ -89,6 +89,8 @@ public class CeasarCipher {
 
             //run decryption
         } else if(conversionCeasar == "decode") {
+            Decrypt newDecrypt = new Decrypt(inputString, shiftValue);
+            System.out.println("Your decoded message is: " + newDecrypt.decryptMessage().toUpperCase());
 
         }else
             System.out.println("Kindly choose if you want to decode or encode");
